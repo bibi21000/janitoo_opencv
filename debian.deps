@@ -1,4 +1,4 @@
 build-essential git cmake pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
 libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgphoto2-dev libdc1394-22-dev
 libatlas-base-dev libavcodec-dev libavformat-dev
-python2.7-dev python-numpy ffmpeg
+python2.7-dev python-numpy #ffmpeg
