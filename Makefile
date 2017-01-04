@@ -78,6 +78,9 @@ clean: clean-doc
 	-rm -f janidoc
 	-@find . -name \*.pyc -delete
 
+check:
+	-ls -lirsa /opt/python/2.7.12/bin/python2.7
+
 uninstall:
 	-yes | ${PIP_EXEC} uninstall ${MODULENAME}
 	-${PYTHON_EXEC} setup.py develop --uninstall
@@ -93,7 +96,7 @@ build_cv/opencv_contrib-${OPENCV_VERSION}:
 	cd  build_cv && wget -O opencv-contrib.zip https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip
 	cd  build_cv && unzip opencv-contrib.zip
 
-deps: build_cv/opencv-${OPENCV_VERSION} build_cv/opencv_contrib-${OPENCV_VERSION}
+deps: check build_cv/opencv-${OPENCV_VERSION} build_cv/opencv_contrib-${OPENCV_VERSION}
 	@echo "Install dependencies for ${MODULENAME}."
 ifneq ('${DEBIANDEPS}','')
 	sudo apt-get install -y ${DEBIANDEPS}
