@@ -12,7 +12,7 @@ before_install:
   - make deps
   - make directories
 install:
-  - make build
+  - export PYTHON2_LIBRARIES="/opt/python/2.7.12/lib/libpython2.7.so" && make build
   - make travis-deps
   - make install
 # command to run tests
