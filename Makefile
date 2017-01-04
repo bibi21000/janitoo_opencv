@@ -185,11 +185,6 @@ directories:
 	-for dir in cache cache/janitoo_manager home log run etc init; do mkdir /opt/janitoo/$$dir; done
 
 travis-deps: deps
-	export PYTHON2_LIBRARIES=/opt/python/2.7.12/lib/libpython2.7.so \
-	export PYTHON2_LIBRARY=/opt/python/2.7.12/lib/libpython2.7.so \
-	export PYTHON2_INCLUDE_DIR=/opt/python/2.7.12/include/python2.7 \
-	export PYTHON2_INCLUDE_PATH=/opt/python/2.7.12/include/python2.7 \
-	export PYTHON2LIBS_VERSION_STRING=2.7.12 \
 	pip install numpy
 	sudo apt-get -y install wget curl
 	@echo
@@ -260,11 +255,6 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
 		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
 		-D BUILD_EXAMPLES=OFF ..
-#~ 		-D PYTHON2_LIBRARIES=/opt/python/2.7.12/lib/libpython2.7.so \
-#~ 		-D PYTHON2_LIBRARY=/opt/python/2.7.12/lib/libpython2.7.so \
-#~ 		-D PYTHON2_INCLUDE_DIR=/opt/python/2.7.12/include/python2.7 \
-#~ 		-D PYTHON2_INCLUDE_PATH=/opt/python/2.7.12/include/python2.7 \
-#~ 		-D PYTHON2LIBS_VERSION_STRING=2.7.12 \
 	#cat build_cv/opencv-3.2.0/_build/CMakeCache.txt
 	#cat build_cv/opencv-3.2.0/_build/CMakeVars.txt
 	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
@@ -273,6 +263,29 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 build: build_cv/opencv-3.2.0/_build/lib/cv2.so
 	@echo
 	@echo "Dependencies for ${MODULENAME} finished."
+
+travis-build:
+	@echo
+	@echo "Installation for travis of ${MODULENAME} finished."
+	@echo "Install opencv for $(distro):$(codename)."
+	-mkdir -p build_cv/opencv-${OPENCV_VERSION}/_build
+	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
+		cmake -D CMAKE_BUILD_TYPE=RELEASE \
+		-D CMAKE_INSTALL_PREFIX=/usr/local \
+		-D PYTHON2_LIBRARIES=/opt/python/2.7.12/lib/libpython2.7.so \
+		-D PYTHON2_LIBRARY=/opt/python/2.7.12/lib/libpython2.7.so \
+		-D PYTHON2_INCLUDE_DIR=/opt/python/2.7.12/include/python2.7 \
+		-D PYTHON2_INCLUDE_PATH=/opt/python/2.7.12/include/python2.7 \
+		-D PYTHON2LIBS_VERSION_STRING=2.7.12 \
+		-D BUILD_opencv_freetype=OFF \
+		-D INSTALL_C_EXAMPLES=OFF \
+		-D INSTALL_PYTHON_EXAMPLES=OFF \
+		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
+		-D BUILD_EXAMPLES=OFF ..
+	#cat build_cv/opencv-3.2.0/_build/CMakeCache.txt
+	#cat build_cv/opencv-3.2.0/_build/CMakeVars.txt
+	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
+		make -j4
 
 egg:
 	-mkdir -p $(BUILDDIR)
