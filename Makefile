@@ -79,7 +79,7 @@ clean: clean-doc
 	-@find . -name \*.pyc -delete
 
 check:
-	-ls -lirsa /opt/python/2.7.12/bin/python2.7
+	-ls -Rlira /opt/python/2.7.12/
 
 uninstall:
 	-yes | ${PIP_EXEC} uninstall ${MODULENAME}
