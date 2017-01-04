@@ -185,8 +185,8 @@ directories:
 	-for dir in cache cache/janitoo_manager home log run etc init; do mkdir /opt/janitoo/$$dir; done
 
 travis-deps: deps
-	sudo apt-get -y install libevent-2.0-5 mosquitto wget curl
-	sudo mkdir -p /opt/janitoo/src/janitoo_nginx
+	pip install numpy
+	sudo apt-get -y install wget curl
 	@echo
 	@echo "Travis dependencies for ${MODULENAME} installed."
 
