@@ -13,7 +13,8 @@ before_install:
   - make directories
 install:
   - make travis-deps
-  - make install
+  - make build
 # command to run tests
 script:
+ - make install
  - make tests
