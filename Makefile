@@ -251,6 +251,7 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		cmake -D CMAKE_BUILD_TYPE=RELEASE \
 		-D CMAKE_INSTALL_PREFIX=/usr/local \
 		-D PYTHON2_LIBRARIES=/opt/python/2.7.12/lib/libpython2.7.so \
+		-D PYTHON2_LIBRARY=/opt/python/2.7.12/lib/libpython2.7.so \
 		-D BUILD_opencv_freetype=OFF \
 		-D INSTALL_C_EXAMPLES=OFF \
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
