@@ -253,7 +253,7 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
 		-D BUILD_EXAMPLES=ON ..
 	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
-		make -j4 >/dev/null
+		make -j4
 
 build: build_cv/opencv-3.2.0/_build/lib/cv2.so
 	@echo
