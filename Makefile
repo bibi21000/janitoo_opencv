@@ -252,6 +252,9 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		-D CMAKE_INSTALL_PREFIX=/usr/local \
 		-D PYTHON2_LIBRARIES=/opt/python/2.7.12/lib/libpython2.7.so \
 		-D PYTHON2_LIBRARY=/opt/python/2.7.12/lib/libpython2.7.so \
+		-D PYTHON2_INCLUDE_DIR=/opt/python/2.7.12/include/python2.7 \
+		-D PYTHON2_INCLUDE_PATH=/opt/python/2.7.12/include/python2.7 \
+		-D PYTHON2LIBS_VERSION_STRING=2.7.12 \
 		-D BUILD_opencv_freetype=OFF \
 		-D INSTALL_C_EXAMPLES=OFF \
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
