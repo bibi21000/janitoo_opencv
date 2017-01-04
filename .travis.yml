@@ -1,4 +1,4 @@
-language: python
+language: cpp
 sudo: required
 dist: trusty
 python:
@@ -11,9 +11,8 @@ before_install:
   - sudo apt-get update -qq
   - make deps
   - make directories
-  - make travis-deps
-  - make build
 install:
+  - make build
   - make travis-deps
   - make install
 # command to run tests
