@@ -256,6 +256,8 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
 		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
 		-D BUILD_EXAMPLES=OFF ..
+	cat build_cv/opencv-3.2.0/_build/CMakeCache.txt
+	cat build_cv/opencv-3.2.0/_build/CMakeVars.txt
 	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
 		make -j4
 
