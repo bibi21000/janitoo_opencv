@@ -11,10 +11,11 @@ before_install:
   - sudo apt-get update -qq
   - make deps
   - make directories
+  - make travis-deps
+  - make build
 install:
   - make travis-deps
+  - make install
 # command to run tests
 script:
-  - make build
-  - make install
   - make tests
