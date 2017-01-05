@@ -286,7 +286,8 @@ travis-build:
 	#cat build_cv/opencv-3.2.0/_build/CMakeVars.txt
 	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
 		make -j4
-	cp /usr/local/lib/python2.7/site-packages/cv2.so /home/travis/virtualenv/python2.7.12/lib/python2.7/site-packages/
+	cp -a /usr/local/lib/python2.7/site-packages/cv2.so /home/travis/virtualenv/python2.7.12/lib/python2.7/site-packages/
+
 egg:
 	-mkdir -p $(BUILDDIR)
 	-mkdir -p $(DISTDIR)
