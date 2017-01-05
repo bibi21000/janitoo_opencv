@@ -14,7 +14,7 @@ before_install:
 install:
   - make travis-deps
   - make travis-build
-  - make install
+  #~ - make install
 # command to run tests
 script:
   - make tests
