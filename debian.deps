@@ -2,5 +2,5 @@ build-essential git cmake pkg-config libjpeg-dev libtiff5-dev libjasper-dev libp
 libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgphoto2-dev libdc1394-22-dev
 libatlas-base-dev libavcodec-dev libavformat-dev libv4l-dev libxine2-dev libavresample-dev
 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libtheora-dev libvorbis-dev libxvidcore-dev
-qtbase5-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libatlas-dev
+libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libatlas-dev
 python2.7-dev python-numpy x264 v4l-utils unzip
