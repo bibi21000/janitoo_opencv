@@ -102,6 +102,7 @@ deps: build_cv/opencv-${OPENCV_VERSION} build_cv/opencv_contrib-${OPENCV_VERSION
 ifneq ('${DEBIANDEPS}','')
 	sudo apt-get install -y ${DEBIANDEPS}
 endif
+	-sudo apt-get install -y libtbb-dev
 	@echo
 	@echo "Dependencies for ${MODULENAME} finished."
 
