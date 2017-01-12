@@ -97,7 +97,7 @@ build_cv/opencv_contrib-${OPENCV_VERSION}:
 	cd  build_cv && unzip opencv-contrib.zip
 
 deps: build_cv/opencv-${OPENCV_VERSION} build_cv/opencv_contrib-${OPENCV_VERSION}
-	@echo "Install dependencies for ${MODULENAME}."
+	#sudo apt-get remove ffmpeg libswscale-ffmpeg3 libswresample-ffmpeg1 libpostproc-ffmpeg53 libavutil-ffmpeg54 libavresample-ffmpeg2 libavformat-ffmpeg56 libavfilter-ffmpeg5 libavdevice-ffmpeg56 libavcodec-ffmpeg56
 ifneq ('${DEBIANDEPS}','')
 	sudo apt-get install -y ${DEBIANDEPS}
 endif
@@ -253,12 +253,15 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		-D BUILD_opencv_freetype=OFF \
 		-D INSTALL_C_EXAMPLES=OFF \
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
+		-D WITH_V4L=ON \
+		-D WITH_QT=ON \
+		-D WITH_OPENGL=ON \
 		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
 		-D BUILD_EXAMPLES=OFF ..
 	#cat build_cv/opencv-3.2.0/_build/CMakeCache.txt
 	#cat build_cv/opencv-3.2.0/_build/CMakeVars.txt
 	cd build_cv/opencv-${OPENCV_VERSION}/_build && \
-		make -j4
+		make -j$$(nproc)
 
 build: build_cv/opencv-3.2.0/_build/lib/cv2.so
 	@echo
