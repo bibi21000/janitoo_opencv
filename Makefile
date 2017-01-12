@@ -254,7 +254,6 @@ build_cv/opencv-3.2.0/_build/lib/cv2.so:
 		-D INSTALL_C_EXAMPLES=OFF \
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
 		-D WITH_V4L=ON \
-		-D WITH_QT=ON \
 		-D WITH_OPENGL=ON \
 		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
 		-D BUILD_EXAMPLES=OFF ..
@@ -282,6 +281,8 @@ travis-build:
 		-D PYTHON2LIBS_VERSION_STRING=2.7.12 \
 		-D BUILD_opencv_freetype=OFF \
 		-D INSTALL_C_EXAMPLES=OFF \
+		-D WITH_V4L=ON \
+		-D WITH_OPENGL=ON \
 		-D INSTALL_PYTHON_EXAMPLES=OFF \
 		-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules \
 		-D BUILD_EXAMPLES=OFF ..
