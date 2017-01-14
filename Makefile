@@ -188,8 +188,7 @@ directories:
 	-for dir in cache cache/janitoo_manager home log run etc init; do mkdir /opt/janitoo/$$dir; done
 
 travis-deps: deps
-	pip install numpy
-	sudo apt-get -y install wget curl
+	sudo apt-get -y install wget curl python-numpy
 	@echo
 	@echo "Travis dependencies for ${MODULENAME} installed."
 
