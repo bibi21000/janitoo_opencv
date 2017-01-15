@@ -98,8 +98,8 @@ build_cv/opencv_contrib-${OPENCV_VERSION}:
 
 deps: build_cv/opencv-${OPENCV_VERSION} build_cv/opencv_contrib-${OPENCV_VERSION}
 	#sudo apt-get remove ffmpeg libswscale-ffmpeg3 libswresample-ffmpeg1 libpostproc-ffmpeg53 libavutil-ffmpeg54 libavresample-ffmpeg2 libavformat-ffmpeg56 libavfilter-ffmpeg5 libavdevice-ffmpeg56 libavcodec-ffmpeg56
-	-sudo apt-get remove -y python-opencv libopencv-calib3d2.4v5 libopencv-core2.4v5 libopencv-features2d2.4v5 libopencv-flann2.4v5 libopencv-imgproc2.4v5 libopencv-ml2.4v5 libopencv-photo2.4v5 libopencv-video2.4v5
-	-sudo apt-get remove -y python-opencv libopencv-calib3d2.4 libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4 libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4 libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4 libopencv-photo2.4 libopencv-video2.4
+	#-sudo apt-get remove -y python-opencv libopencv-calib3d2.4v5 libopencv-core2.4v5 libopencv-features2d2.4v5 libopencv-flann2.4v5 libopencv-imgproc2.4v5 libopencv-ml2.4v5 libopencv-photo2.4v5 libopencv-video2.4v5
+	#-sudo apt-get remove -y python-opencv libopencv-calib3d2.4 libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4 libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4 libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4 libopencv-photo2.4 libopencv-video2.4
 ifneq ('${DEBIANDEPS}','')
 	sudo apt-get install -y ${DEBIANDEPS}
 endif
